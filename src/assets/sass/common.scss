@@ -1,0 +1,77 @@
+@charset "UTF-8";
+// @import 'normalize';
+@import "partial/base";
+@import "partial/flex";
+
+html,
+body {
+    position: relative;
+    font-family: "微软雅黑", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background:transparent;
+    overflow-x:hidden;
+}
+button {
+    border: none;
+    outline: 0;
+}
+
+*{
+    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -khtml-user-select:none; /*早期浏览器*/
+    -moz-user-select:none;/*火狐*/
+    -ms-user-select:none; /*IE10*/
+    user-select:none;
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+}
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+input {
+  -webkit-user-select:auto; /*webkit浏览器*/
+  outline: none;
+}
+i{
+  display: inline-block;
+}
+title{
+  display: block;
+}
+@mixin bg($url) {
+  background:url($url) center no-repeat;
+  background-size: 100% 100%;
+}
+
+@mixin wh($width, $height, $hasLineHeight) {
+  width: $width;
+  height: $height;
+
+  @if $hasLineHeight == true {
+    line-height: $height;
+  }
+}
+@mixin colorFont($color, $fontSize) {
+  color:$color;
+  font-size: $fontSize;
+}
+#btnTest{
+  position: fixed;
+  top:0;
+  right:0;
+  z-index: 999;
+  @include wh(120px, 40px, false);
+}
+#root{height:100%;}
+.word{
+  white-space: nowrap;
+  -webkit-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

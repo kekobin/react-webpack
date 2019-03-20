@@ -1,0 +1,17 @@
+@mixin bg($url) {
+    background:url($url) center no-repeat;
+    background-size: 100% 100%;
+}
+
+@mixin wh($width, $height, $hasLineHeight) {
+    width: $width;
+    height: $height;
+
+    @if $hasLineHeight == true {
+        line-height:$height;
+    }
+}
+@mixin colorFont($color, $fontSize) {
+    color:$color;
+    font-size: $fontSize;
+}
