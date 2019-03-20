@@ -1,2 +1,2 @@
 # react-webpack
-react webpack config.
+react + redux + webpack, and HOC apply.
